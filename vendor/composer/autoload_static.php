@@ -72,12 +72,17 @@ class ComposerStaticInitae7e24d7562fd55a99dd9330ccf4b6e4
         ),
     );
 
+    public static $classMap = array (
+        'User' => __DIR__ . '/../..' . '/app/models/User.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitae7e24d7562fd55a99dd9330ccf4b6e4::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitae7e24d7562fd55a99dd9330ccf4b6e4::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitae7e24d7562fd55a99dd9330ccf4b6e4::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitae7e24d7562fd55a99dd9330ccf4b6e4::$classMap;
 
         }, null, ClassLoader::class);
     }
